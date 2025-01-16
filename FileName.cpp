@@ -1,39 +1,28 @@
-#include "Fractions.h"
+#include "MyArray.h"
 #include <iostream>
 using namespace std;
 
 int main() {
-    Fractions f1, f2, result;
-    int num1, denom1, num2, denom2;
 
-    cout << "Enter num and denom for f1: ";
-    cin >> num1 >> denom1;
-    f1.setValues(num1, denom1);
+    MyArray array1;
+    cout << "Array1 default: ";
+    array1.printArray();
 
-    cout << "Enter num and denom for f2: ";
-    cin >> num2 >> denom2;
-    f2.setValues(num2, denom2);
+    MyArray array2(5);
+    cout << "Array2 size 5: ";
+    array2.printArray();
 
-    cout << "f1: ";
-    f1.print();
-    cout << "\nf2: ";
-    f2.print();
+    int initArr[] = { 3, -1, 4, 1, 5 };
+    MyArray array3(5, initArr);
+    cout << "Array3 initialized: ";
+    array3.printArray();
 
-    result = f1 + f2;
-    cout << "\nSum: ";
-    result.print();
+    cout << "Max Array3: " << array3.findMax() << endl;
+    cout << "Min Array3: " << array3.findMin() << endl;
 
-    result = f1 - f2;
-    cout << "\nDifference: ";
-    result.print();
+    array3.sortArray();
+    cout << "Array3 sort: ";
+    array3.printArray();
 
-    result = f1 * f2;
-    cout << "\nProduct: ";
-    result.print();
-
-    result = f1 / f2;
-    cout << "\nQuotient: ";
-    result.print();
 
     return 0;
-}
